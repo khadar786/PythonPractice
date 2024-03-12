@@ -1,0 +1,15 @@
+1.Template
+render_template
+
+2.Template variable
+Jinja template engine
+Inserting a variable {{some_variable}}
+
+3.Template Control Flow
+for loops and if
+{% %}
+
+{% for item in mylist %}
+{% endfor %}
+
+https://tedboy.github.io/jinja2/templ11.html

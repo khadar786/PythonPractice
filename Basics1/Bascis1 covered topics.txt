@@ -1,0 +1,28 @@
+python -m venv venv
+python	: This calls the Python interpreter.
+-m venv	: This is a module that comes with Python, used for creating virtual environments.
+venv	: This is the name of the directory where the virtual environment will be created. You can name it whatever you like, but venv is a common convention.
+
+Activate virtual environment:
+.\env folder name\Scripts\activate
+eg:.\venv\Scripts\activate
+
+Deactivate virtual environment:
+deactivate
+
+install requirements:
+pip install -r .\requirements.txt
+
+Pip Freeze:
+Pip Freeze is a command used in Python to freeze the current state of a virtual environment. This command creates a list of all the installed packages in the virtual environment, along with their versions. This list can be used later to recreate the same virtual environment on another machine.
+
+pip freeze > requirements.txt
+
+##########Route##########
+Adding route
+Access parameter
+
+##########Debug mode######
+debug=True
+
+
