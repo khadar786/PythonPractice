@@ -1,0 +1,42 @@
+1.Inheritance Template
+{% extend "base.html" %}
+{% block %} statements to extend these re-usable aspects to other pages
+
+{% block content %}
+
+{% endblock %}
+
+eg:
+1)base.html
+{% block content %}
+
+{% endblock %}
+
+2)home.html
+{% extend "base.html" %}
+{% block content %}
+------------------
+------------------
+{% endblock %}
+
+3)Result
+------------------
+------------------
+------------------
+------------------
+
+Filter:
+{{variable | filter }}
+{{name | capitalize }}
+
+4)url_for() helper function that allows us to easily connect other template pages
+@app.route('/view/<title>')
+def viewDetails(title):
+  return render_template('view.html',title=title)
+
+viewDetails : method
+title : parameter
+<a href="{{ url_for('viewDetails',title=user) }}">{{user}}</a>
+
+
+

@@ -1,0 +1,3 @@
+flask_wtf - wtf_forms
+secret key for security
+validators
