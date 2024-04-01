@@ -1,0 +1,3 @@
+Python needs a MySQL driver to access the MySQL database
+pip install mysql-connector-python
+pip install python-dotenv

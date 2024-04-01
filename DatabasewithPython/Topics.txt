@@ -1,0 +1,4 @@
+To connect Python,Flask, and SQL together we will need an ORM(Object Relational Mapper)
+
+Flask-SQLAlchemy
+pip install Flask-SQLAlchemy
