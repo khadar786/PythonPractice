@@ -3,14 +3,13 @@ db_conn=dbconnection.connectDB()
 #db_conn.autocommit(True)
 import json
 
-def addUser():
+def addUser(values):
   try:
     cursor = db_conn.cursor(dictionary=True)
     #print("Add user",db_conn)
     query="""
       INSERT INTO members(FirstName,LastName,Email,Country)VALUES(%s,%s,%s,%s)
     """
-    values=("khadar2","basha2","khadar2@gmail.com","UK")
     cursor.execute(query,values)
     db_conn.commit()
     print(cursor.lastrowid)
@@ -48,7 +47,12 @@ def readUser():
   userResult=cursor.fetchall()
   
   for user in userResult:
-    print(user['MemberID'])
+    print("MemberID :",user['MemberID'])
+    print("FirstName :",user['FirstName'])
+    print("LastName :",user['LastName'])
+    print("Email :",user['Email'])
+    print("Country :",user['Country'])
+    print("######################\n")
   
   db_conn.commit()
   #cursor.close()
@@ -79,11 +83,28 @@ def readOneUser():
   except Exception as e:
     print(e)
   
-def deleteUser():
+def deleteUser(userID):
+  cursor = db_conn.cursor(dictionary=True)
   print("Delete user")
+  try:
+    query=f"DELETE FROM members WHERE MemberID={userID}"
+    cursor.execute(query)
+    print('number of rows deleted',cursor.rowcount)
+    db_conn.commit()
+    cursor.close()
+    db_conn.close()
+  except Exception as e:
+    print(e)
+  
 
-
-#addUser()
+#values=("suresh","kumar","sureshkumar@gmail.com","UK")
+#values=list()
+""" fname=input("Enter first name :\n")
+lname=input("Enter last name :\n")
+email=input("Enter email :\n")
+country=input("Enter country :\n")
+addUser((fname,lname,email,country)) """
 #readUser()
 #readOneUser()
 #updateUser()
+#deleteUser(3)
