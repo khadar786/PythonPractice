@@ -4,4 +4,8 @@
 4.TemplateForms
 5.TemplateFormsPractice
 6.FlaskForms1
-7.
+7.FlaskForms2
+8.FormBasics
+9.FormFieldsPartOneandTwo
+10.FlashAlerts
+11.DatabasewithPython

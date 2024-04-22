@@ -7,12 +7,23 @@ from wtforms.validators import DataRequired
 import dbconnection
 db_conn=dbconnection.connectDB()
 
-app=Flask(__name__,static_url_path='/static')
+app=Flask(__name__,template_folder='templates',static_url_path='/static')
 
 @app.route("/",methods=['GET'])
 def index():
-  print(db_conn)
-  return 'its working'
+  return render_template("index.html")
+
+@app.route("/register",methods=['GET'])
+def register():
+  return render_template("register.html")
+
+@app.route("/forgotpwd",methods=['GET'])
+def forgotpwd():
+  return render_template("forgotpassword.html")
+
+@app.route("/dashboard",methods=['GET'])
+def dashboard():
+  return render_template("dashboard.html")
 
 
 if __name__=='__main__':
