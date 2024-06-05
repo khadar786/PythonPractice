@@ -25,6 +25,18 @@ def forgotpwd():
 def dashboard():
   return render_template("dashboard.html")
 
+@app.route("/users",methods=['GET'])
+def users():
+  return render_template("users.html")
+
+@app.route("/adduser",methods=['GET'])
+def adduser():
+  return render_template("add_user.html")
+
+@app.route("/logout",methods=['GET'])
+def logout():
+  return redirect('/')
+
 
 if __name__=='__main__':
   app.run()
